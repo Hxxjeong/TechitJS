@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach와 map</title>
+</head>
+<body>
+    <script>
+        const superheroes = ['아이언맨', '캡틴 아메리카', '토르', '닥터 스트레인지'];
+        superheroes.forEach(hero => {
+            console.log(hero);
+        });
+
+        const array = [1, 23, 45, 6];
+        const squared =[];
+        array.forEach(n => squared.push(Math.pow(n, 2)));
+        const s = array.map(n => Math.pow(n, 2));
+        console.log(squared);
+        console.log(s);
+    </script>
+</body>
+</html>
