@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function hello() {
+            console.log('hello');
+        }
+
+        // 함수 중복 정의 가능
+        // 중복 정의가 되었을 때는 나중에 정의된 함수가 실행
+        function hello() {
+            console.log('hi');
+        }
+
+        // 함수가 일급 객체이므로 상수에 함수가 정의될 수 있음
+        // f1이 함수 이름
+        const f1 = function() {
+            console.log('function hello');
+        }
+        f1();
+
+        // 화살표 함수
+        const f2 = () => console.log("func2 hello");
+        f2();
+
+        function hi(a) {
+            console.log('hello ' + a);
+        }
+        const hi2 = a => console.log('hello ' + a);
+    </script>
+</body>
+</html>

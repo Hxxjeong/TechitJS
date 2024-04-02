@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Exam03</title>
+</head>
+<body>
+    <script>
+        function test() {
+            console.log("test");
+        }
+
+        // let c = test;   // test면 c에 함수 전체 대입, test()면 함수 실행 후 값을 대입
+
+        // 함수의 매개 변수로 함수를 받을 수 있음
+        function c(abc) {
+            abc();
+        }
+
+        c(test);
+
+        let ttt = c(test);
+        console.log(ttt);
+        c(test)();
+    </script>
+</body>
+</html>
