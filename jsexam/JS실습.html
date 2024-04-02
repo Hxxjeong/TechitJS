@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 문제 1: 배열 모든 요소 출력
+        const numbers = [1, 2, 3, 4, 5];
+        console.log(numbers);
+        
+        // 문제 2: 객체의 모든 프로퍼티와 값 출력
+        const person = {
+            name: '홍길동',
+            age: 25,
+            email: 'hong@example.com'
+        };
+        console.log(person);
+
+        // 문제 3: 특정 값의 개수 찾기
+        const number = [1, 3, 7, 8, 3, 3, 4, 3];
+        const targetNumber = 3;
+        let count = 0;
+        for(let i of number) {
+            if (i === targetNumber) {
+                count++;
+            }
+        }
+        console.log(count);
+
+        // 문제 4: 최대값 찾기
+        const num = [10, 36, 54, 89, 12];
+        let max = num[0];
+        for(let i of num) {
+            if (i > max) {
+                max = i;
+            }
+        }
+        console.log(max);
+
+        // 문제 5: 객체 배열에서 특정 조건의 객체 찾기
+        // 나이 30 이상인 이름 출력
+        const users = [
+            { name: 'Alice', age: 25 },
+            { name: 'Bob', age: 30 },
+            { name: 'Charlie', age: 28 },
+            { name: 'Dave', age: 35 }
+        ];
+        let overThirty = [];
+        for (let user of users) {
+            if(user.age >= 30) {
+                overThirty.push(user);
+            }
+        }
+        console.log(overThirty);
+    </script>
+</body>
+</html>

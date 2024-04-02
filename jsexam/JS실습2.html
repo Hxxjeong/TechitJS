@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Script>
+        // 1
+        // 배열 내용 제곱
+        const numbers = [1, 2, 3, 4, 5];
+        const pow = [];
+        numbers.map(i => pow.push(Math.pow(i, 2)));
+        console.log(pow);
+
+        // 2
+        // 짝수만 필터링
+        const number = [1, 2, 3, 4, 5, 6];
+        const even = [];
+        number.filter(i => {
+            if (i%2 === 0) {
+                even.push(i);
+            }
+        });
+        console.log(even);
+
+        // 3
+        // 배열 인덱스의 총 합
+        console.log(numbers.reduce((sum, i) => sum += i, 0));
+
+        // 4
+        // 나이가 30 이상만 추출
+        const people = [
+            { name: 'Alice', age: 25 },
+            { name: 'Bob', age: 30 },
+            { name: 'Charlie', age: 28 }
+        ];
+        const overThiry = people.find(i => i.age >= 30);
+        console.log(overThiry);
+
+        // 5
+        // 10 이상인지 확인
+        const num = [10, 20, 30, 40, 50];
+        const overTen = num.every(i => i>=10);
+        console.log(overTen);
+
+        // 6
+        // 홀수가 하나라도 있는지 확인
+        const n = [2, 4, 6, 8, 10, 11];
+        const result = n.some(n => n%2!==0);
+        console.log(result);
+    </Script>
+</body>
+</html>
