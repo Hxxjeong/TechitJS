@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const dog = {
+            name: "dog",
+            sound: "bark! bark!",
+
+            say: function() {
+                console.log(this.sound);
+                console.log(this);  // 객체 안 this, 화살표 함수를 쓰면 Windows가 됨
+            }
+        };
+
+        const arrow = () => {
+            console.log(this);  // 객체 밖 this = Windows
+        };
+        arrow();
+
+        dog.say();
+    </script>
+</body>
+</html>

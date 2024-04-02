@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <script>
+        const dog = {
+            name: "dog",
+            age: 2
+        };
+
+        console.log(dog.name);
+        console.log(dog["name"]);
+        console.log(dog);
+
+        // 객체 비구조화 할당
+        function print(dog) {
+            const {name, age} = dog;
+            const text = `${name}이는 ${age}살이에요.`;
+            console.log(text);
+        }
+        print(dog)
+
+        function print2({name, age}) {
+            const t2 = `${name}, ${age}`;
+            console.log(t2);
+        }
+        print2(dog);
+    </script>
+</body>
+</html>
