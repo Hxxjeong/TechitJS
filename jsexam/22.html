@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비동기 처리</title>
+</head>
+<body>
+    <script>
+        function work() {
+            const start = Date.now();
+            for (let i=0; i<1000000000; i++) {
+            }
+            const end = Date.now();
+            console.log(end - start + "ms");
+        }
+
+        work();
+        console.log('next work');
+
+        function hi() {
+            console.log('hello');
+        }
+
+        // 1000ms 후에 실행
+        // 가장 마지막에 실행
+        // callback queue는 stack이 비어야 실행
+        setTimeout(hi, 1000);
+
+        console.log('hi next work');
+    </script>
+</body>
+</html>
