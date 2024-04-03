@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단축 평가</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name: "hxxzz",
+            job: {
+                title: "student",
+                manager: {
+                    name: "hh"
+                }
+            }
+        };
+
+        function printManagerName(person) {
+            console.log(person.job.manager.name);
+        }
+
+        function printManagerName(person) {
+            console.log(
+                person && person.job && person.job.manager && person.job.manager.name
+            );
+        }
+
+        // ?.: null인지 판단
+        function printManagerName(person) {
+            console.log(person?.job?.manager?.name);
+        }
+
+        printManagerName(person);
+
+        const choi = {name: "choi aa"};
+        printManagerName(choi);
+
+        const kim = {
+            name: "kim",
+            admin() {
+                console.log("This is admin");
+            }
+        }
+
+        kim.admin();
+        choi.admin?.(); // admin()이 없으면 실행 X
+
+        // ?.[속성명]
+        console.log(person["name"]);
+
+        const na = {};
+        console.log(na?.["name"]);
+    </script>
+</body>
+</html>

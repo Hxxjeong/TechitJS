@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단축 평가</title>
+</head>
+<body>
+    <script>
+        /*
+        &&: 첫번째가 true면 두번째 값 반환, 그렇지 않으면 첫번째 반환
+        ||: 첫번째가 flase면 두번째 값 반환, 그렇지 않으면 첫번째 단환
+        ??: 첫번째가 null이나 undefined면 첫번째 값 반환, 그렇지 않으면 두번째 반환
+        */
+
+        const food = {foodName: "떡볶이"};
+
+        function getFoodName(food) {
+            if(!food) return "no food"; // null일 떄
+            return food.foodName;
+        }
+
+        console.log(getFoodName(food));
+
+        const food2 = {};
+        console.log(getFoodName(food2));    // undefined 출력, null이면 오류
+
+        // 단축 연산 구현
+        function getFoodName(food) {
+            return food && food.foodName;   // null이 아닐 때만 foodName 반환
+        }
+
+        console.log(true && "hello");   // hello
+        console.log(false && "hello");  // false
+
+        const name = 'hxxzz';
+        const userName = name || 'guest';   // name이 없으면 guest 저장
+
+        console.log("" ?? 'hello'); // "" 출력
+
+        let oldName = "hahaha";
+        let newName = "hehehe";
+
+        console.log(newName && (oldName = newName));
+        console.log(newName && newName);
+    </script>
+</body>
+</html>
