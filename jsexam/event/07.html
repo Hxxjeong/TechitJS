@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <!-- form 태그는 자체 이벤트를 가지고 있음 -->
+    <form action="06.html" method="get" id="form1">
+        이름: <input type="text" name="name" id="name"><br>
+        비밀번호: <input type="password" name="password" id="password"><br>
+        비밀번호 확인: <input type="password" name="checkPassword" id="checkPassword"><br>
+        <input type="submit" value="등록">
+    </form>
+
+    <script>
+        let form = document.getElementById('form1');
+        let nameInput = document.getElementById('name');
+        let passwordInput = document.getElementById('password');
+        let checkPasswordInput = document.getElementById('checkPassword');
+
+        form.addEventListener('submit', function(event) {   // 제출 시 이벤트: submit
+            if (nameInput.value === '') {   // 이름을 입력했는지 확인 (input태그.value)
+                alert('이름을 입력하세요.');
+                event.preventDefault(); // 폼 제출을 막음
+                nameInput.focus();  // 해당 input 창으로 커서
+            } else if (passwordInput.value === '') {    // 비밀번호를 입력했는지 확인
+                alert('비밀번호를 입력하세요.');
+                event.preventDefault();
+                passwordInput.focus();
+            } else if (passwordInput.value !== checkPasswordInput.value) {  // 비밀번호가 일치하는지 확인
+                alert('비밀번호가 일치하지 않습니다.');
+                event.preventDefault();
+                checkPasswordInput.focus();
+            }
+        });
+    </script>
+</body>
+</html>

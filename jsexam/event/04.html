@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random color</title>
+</head>
+<body>
+    <button>click</button>
+    <button>reset</button>
+
+    <script>
+        // click 시 배경색 랜덤으로 변경
+        function changeColor(event) {
+            let r, g, b;
+            r = Math.floor(Math.random() * 256);
+            g = Math.floor(Math.random() * 256);
+            b = Math.floor(Math.random() * 256);
+            document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+
+            event.target.removeEventListener('click', changeColor); // 이벤트가 한번만 실행되고 삭제됨
+            this.removeEventListener('click', changeColor); // 이벤트가 한번만 실행되고 삭제됨
+        }
+
+        function reset(event) {
+            document.body.style.backgroundColor = 'white';
+        }
+        document.querySelectorAll('button')[0].addEventListener('click', changeColor);
+        document.querySelectorAll('button')[1].addEventListener('click', reset);
+    </script>
+</body>
+</html>

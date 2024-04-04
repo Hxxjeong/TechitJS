@@ -1,0 +1,26 @@
+<!-- 이벤트 버블링  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Bubbling</title>
+    <style>
+      * {
+        border: 3px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div onclick="alert('outer-div');">
+      <div onclick="alert('inner-div');">
+        <div onclick="alert('inner-inner_div');">
+          <h1 onclick="alert('h1');">
+            <p onclick="alert('p');">p태그</p>
+            <!-- 가장 아래 box부터 전파됨 / 기본 설정 -->
+            <!-- capturing 방식: 가장 위 box부터 전파됨 -->
+          </h1>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

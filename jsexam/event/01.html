@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <script>
+        // source에 eventListener(이벤트명, 이벤트핸들러(함수), [ToCapture](bubbling/capturing))
+
+        function hi() {
+            alert('hi');
+        }
+        // document.addEventListener('click', hi); // 전체 body에 영향
+        const btn = document.getElementById('btn'); // button에만 영향
+        btn.addEventListener('click', hi);
+
+    </script>
+</body>
+</html>
