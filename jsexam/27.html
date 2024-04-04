@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async/await 에러 처리</title>
+</head>
+<body>
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function makeError() {
+            await sleep(1000);
+            const error = new Error();
+            throw error;
+        }
+
+        async function process() {
+            try {
+                await makeError();
+            }
+            catch(e) {
+                console.error(e);
+            }
+        }
+
+        process();
+    </script>
+</body>
+</html>

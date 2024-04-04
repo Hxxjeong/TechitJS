@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async/await</title>
+</head>
+<body>
+    <script>
+        function sleep(ms) {
+            return new Promise((resolve) => setTimeout(resolve, ms));
+        }
+
+        // async를 넣지 않으면 기다리지 않고 바로 출력
+        async function process() {
+            console.log('hi');
+            await sleep(1000);    // 비동기
+            console.log('nice to meet you');
+        }
+
+        // async/await를 사용하지 않는 경우의 비동기 처리
+        function process2() {
+            console.log('hi2');
+            sleep(1000).then(() => {
+                console.log('nice to meet you2')
+            })
+        }
+
+        console.log('before process');
+        process();
+        process2();
+        console.log('after process');
+    </script>
+</body>
+</html>
